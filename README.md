@@ -25,7 +25,8 @@ After completing this assignment, you should be able to:
   * a Django project called `movieratings`
 
 ### Normal Mode
-Using your django application from last week you need to add enough data to 
+You may use your django application from [last week](https://github.com/tiy-lv-python-2015-10/django-movies)
+ or create a new one.  You need to add enough data to 
 accomplish the following in views and templates.  If you would like to try to
 avoid so much manual data input please attempt hard mode to get the full data 
 set loaded for you.
@@ -47,7 +48,7 @@ set loaded for you.
 Migrate the system over to your local postgres database.  This will be similar
  to what needs to happen with a new production database.  
 
-Take [the script I wrote to turn MovieLens 1M data into fixtures](https://github.com/tiy-lv-python-2015-06/django-movies/blob/master/convert_ml_1m_data.py)
+Take [the script I wrote to turn MovieLens 1M data into fixtures](https://github.com/tiy-lv-python-2015-10/django-movies-part-2/blob/master/convert_ml_1m_data.py)
 and modify it to turn your CSV data into fixtures, then load those fixtures
 with `python manage.py loaddata <fixture_file>`.
 
