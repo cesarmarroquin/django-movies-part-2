@@ -17,6 +17,11 @@ After completing this assignment, you should be able to:
 
 ## Details
 
+### Requirements
+* 404 Errors on bad data
+* Tests
+* No pep8 errors
+
 ### Deliverables
 
 * A Git repo called django-movies containing at least:
@@ -46,10 +51,11 @@ set loaded for you.
 ### Hard Mode
 
 Migrate the system over to your local postgres database.  This will be similar
- to what needs to happen with a new production database.  
+ to what needs to happen with a new production database.  You can find the information on this
+[here](https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-DATABASES).  The second code example shows
+the configuration for postgres.  You will need to create the database like last week
+then run migrations on it. 
 
 Take [the script I wrote to turn MovieLens 1M data into fixtures](https://github.com/tiy-lv-python-2015-10/django-movies-part-2/blob/master/convert_ml_1m_data.py)
 and modify it to turn your CSV data into fixtures, then load those fixtures
 with `python manage.py loaddata <fixture_file>`.
-
-
