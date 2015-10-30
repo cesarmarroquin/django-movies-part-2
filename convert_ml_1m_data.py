@@ -3,11 +3,11 @@ import json
 
 print("Converting users...")
 users = []
-with open("data/users.dat") as infile:
+with open("ml-1m/users.dat") as infile:
     reader = csv.reader((line.replace("::", ";") for line in infile),
                         delimiter=";")
     for row in reader:
-        users.append({"model": "rater.Rater",
+        users.append({"model": "movies2.Rater",
                       "pk": row[0],
                       "fields": {
                           "gender": row[1],
@@ -21,11 +21,11 @@ with open("movieratings/fixtures/users.json", "w") as outfile:
 
 print("Converting movies...")
 movies = []
-with open("data/movies.dat", encoding="windows-1252") as infile:
+with open("ml-1m/movies.dat", encoding="windows-1252") as infile:
     reader = csv.reader((line.replace("::", ";") for line in infile),
                         delimiter=";")
     for row in reader:
-        movies.append({"model": "rater.Movie",
+        movies.append({"model": "movies2.Movie",
                        "pk": row[0],
                        "fields": {
                            "title": row[1],
@@ -37,11 +37,11 @@ with open("movieratings/fixtures/movies.json", "w") as outfile:
 
 print("Converting ratings...")
 ratings = []
-with open("data/ratings.dat") as infile:
+with open("ml-1m/ratings.dat") as infile:
     reader = csv.reader((line.replace("::", ";") for line in infile),
                         delimiter=";")
     for idx, row in enumerate(reader):
-        ratings.append({"model": "rater.Rating",
+        ratings.append({"model": "movies2.Rating",
                         "pk": idx + 1,
                         "fields": {
                             "rater": row[0],
