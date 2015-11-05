@@ -1,0 +1,17 @@
+{% extends 'movies2/base.html' %}
+{% load bootstrap3 %}
+{% block title %}
+Movie Detail
+{% endblock %}
+
+{% block content %}
+
+    <h1>Movie Detail</h1>
+    <p>Movie: {{ movie.title  }}</p>
+    <p>Average Rating: {{ movie.average_rating  }}</p>
+
+    {% for ratings in movie.all_ratings %}
+        <a href="{% url 'rater_detail' ratings.rater.id %}"><p>Raters: {{ ratings.rater.id }}</p></a>
+    {% endfor %}
+
+{% endblock %}

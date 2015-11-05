@@ -1,0 +1,35 @@
+{% extends 'movies2/base.html' %}
+
+{% block content %}
+
+    <p style="text-align: center; font-size: 2em;">Movie List</p>
+    <table style="width:100%">
+        <tr>
+            <td><h2>Title</h2></td>
+            <td><h2>Genre</h2></td>
+            <td><h2>Average Rating</h2></td>
+            <td><h2>Rater Gender</h2></td>
+        </tr>
+        {% for movie in movies  %}
+            <tr>
+                <td><a href="{% url 'movie_detail' movie.id %}">{{ movie.title }}</a></td>
+                <td>{{ movie.genre }}</td>
+                <td>{{ movie.average_rating }}</td>
+
+            </tr>
+        {% endfor %}
+        {% if is_paginated %}
+                {% if page_obj.has_previous %}
+                    <a href="{% url 'list_movies' %}?page={{ page_obj.previous_page_number }}"><-Prev</a>
+                {% endif %}
+            {{ page_obj }}
+                {% if page_obj.has_next %}
+                    <a href="{% url 'list_movies' %}?page={{ page_obj.next_page_number }}">Next -></a>
+                {% endif %}
+            {% endif %}
+
+
+
+    </table>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'movies2/base.html' %}
+{% load bootstrap3 %}
+{% block title %}
+Movie Detail
+{% endblock %}
+
+{% block content %}
+
+
+
+
+    <h1>Rater Detail</h1>
+    <p>Gender: {{ rater.gender  }}</p>
+    <p>Age: {{ rater.age }}</p>
+    <p>Occupation: {{ rater.occupation  }}</p>
+    <p>Zip Code: {{ rater.zip_code  }}</p>
+
+
+{% endblock %}

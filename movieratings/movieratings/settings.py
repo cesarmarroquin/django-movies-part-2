@@ -39,6 +39,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'movies2',
+    'users',
+    'django_extensions',
+    'bootstrap3',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -57,7 +60,7 @@ ROOT_URLCONF = 'movieratings.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "movies2/templates/")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,6 +89,7 @@ DATABASES = {
         'PORT': '',
     }
 }
+
 
 
 # Internationalization
